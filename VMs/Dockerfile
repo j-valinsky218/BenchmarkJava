@@ -1,5 +1,10 @@
 # This dockerfile builds a container that pulls down and runs the latest version of Benchmark
 FROM ubuntu:latest
+
+RUN addgroup --system <group>
+RUN adduser --system <user> --ingroup <group>
+USER <user>:<group>
+
 MAINTAINER "Dave Wichers dave.wichers@owasp.org"
 
 RUN apt-get update
